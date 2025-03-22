@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Hierarchy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: white;
+            overflow-x: hidden;
+        }
+        .header {
+            background: linear-gradient(90deg, #8a2be2, #4b0082);
+            color: white;
+            padding: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            opacity: 0;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+        .node {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(145deg, #8a2be2, #4b0082);
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .node:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 1);
+        }
+        .node img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .info {
+            display: none;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+        .node:hover .info {
+            display: block;
+        }
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .branch {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .line {
+            width: 2px;
+            height: 50px;
+            background-color: #8a2be2;
+            margin: auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">בית הספר</div>
+    <div class="tree-container">
+        <div class="node">
+            <img src="principal.jpg" alt="Principal">
+            <div class="info">מנהל בית הספר - מידע נוסף</div>
+        </div>
+        <div class="line"></div>
+        <div class="branch">
+            <div class="node">
+                <img src="teacher1.jpg" alt="Teacher 1">
+                <div class="info">מורה למדעים - מידע נוסף</div>
+            </div>
+            <div class="node">
+                <img src="teacher2.jpg" alt="Teacher 2">
+                <div class="info">מורה למתמטיקה - מידע נוסף</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="branch">
+            <div class="node">
+                <img src="student1.jpg" alt="Student 1">
+                <div class="info">תלמיד כיתה י' - מידע נוסף</div>
+            </div>
+            <div class="node">
+                <img src="student2.jpg" alt="Student 2">
+                <div class="info">תלמיד כיתה י"ב - מידע נוסף</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
